@@ -101,20 +101,6 @@ extension YelpDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard
-            let cell = tableView.cellForRow(at: indexPath) as? YelpTableViewCell,
-            let model = cell.model
-        else { return }
-        
-        let detailsViewModel = YelpDetailsViewModel(yelpBusinessModel: model)
-        
-        let detailsController = YelpDetailsViewController()
-        detailsController.viewModel = detailsViewModel
-        
-        navigationController?.pushViewController(detailsController, animated: true)
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }

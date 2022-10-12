@@ -40,7 +40,8 @@ class YelpDetailsViewModel {
                     print(error.localizedDescription)
                 }
             } receiveValue: { [weak self] models in
-                self?.reviews = models[0..<3].map({ $0 })
+                let limit = models.count > 2 ? 3 : 2
+                self?.reviews = models[0..<limit].map({ $0 })
             }
             .store(in: &subscriptions)
     }
