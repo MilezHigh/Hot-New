@@ -70,9 +70,6 @@ extension YelpDetailsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0:
-            return 1
-            
         case 1:
             return viewModel?.reviews.count ?? 0
             
