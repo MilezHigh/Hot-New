@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B56107CE-AEA0-40F0-BFE3-1B864433C959"
+            uuid = "9697EEA2-4AC5-4EA1-B766-1A94B20BB30A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HotNewRestaurants/YelpViewController/YelpViewController.swift"
+            filePath = "HotNewRestaurants/YelpDetailsMVVM/YelpDetailsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "locationManagerDidChangeAuthorization(_:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getReviews(storeId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D707B29A-66D0-4F18-B422-9E215E6B8EF1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HotNewRestaurants/YelpDetailsMVVM/YelpDetailsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getReviews(storeId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
