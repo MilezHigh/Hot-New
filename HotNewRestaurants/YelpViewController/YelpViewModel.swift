@@ -1,5 +1,5 @@
 //
-//  MainViewModel.swift
+//  YelpViewModel.swift
 //  HotNewRestaurants
 //
 //  Created by Miles Fishman on 10/11/22.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class MainViewModel {
+class YelpViewModel {
     
     private var subscriptions: Set<AnyCancellable> = []
     

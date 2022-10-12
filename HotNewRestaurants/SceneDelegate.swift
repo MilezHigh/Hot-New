@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
-        let controller = ViewController()
+        let controller = YelpViewController()
         controller.viewModel = MainViewModel()
         
         let appearance = UINavigationBarAppearance()

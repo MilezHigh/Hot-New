@@ -62,6 +62,7 @@ class YelpTableViewCell: UITableViewCell {
         view.font = .systemFont(ofSize: 15)
         view.textColor = . black
         view.textAlignment = .right
+        view.numberOfLines = 0
         return view
     }()
     
@@ -96,6 +97,10 @@ class YelpTableViewCell: UITableViewCell {
             ratingLabel.text = "Rating: \(model.rating?.description ?? "")"
             priceLabel.text = model.price ?? "Price: N/A"
             distanceLabel.text = model.distance?.description
+            phoneLabel.text = model.phone
+            addressLabel.text = model.location?.display_address?.reduce("", {
+                $0 + "\($0 == "" ? $0 : ", ")" + $1
+            })
             
             businessImageView.loadImage(urlString: model.image_url ?? "")
         }
@@ -110,13 +115,14 @@ class YelpTableViewCell: UITableViewCell {
         containerView.addArrangedSubview(contentStackView)
         contentStackView.addArrangedSubview(businessImageView)
 
-        [nameLabel, ratingLabel, priceLabel, distanceLabel, addressLabel, phoneLabel].forEach { label in
+        [nameLabel, addressLabel, phoneLabel, ratingLabel, priceLabel, distanceLabel].forEach { label in
             contentStackView.addArrangedSubview(label)
         }
         
         addressLabel.isHidden = !willDisplayDetails
         phoneLabel.isHidden = !willDisplayDetails
         distanceLabel.isHidden = willDisplayDetails
+        nameLabel.isHidden = willDisplayDetails
         
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
@@ -129,7 +135,7 @@ class YelpTableViewCell: UITableViewCell {
             ratingLabel.heightAnchor.constraint(equalToConstant: 20),
             priceLabel.heightAnchor.constraint(equalToConstant: 20),
             distanceLabel.heightAnchor.constraint(equalToConstant: 20),
-            addressLabel.heightAnchor.constraint(equalToConstant: 20),
+            addressLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 20),
             phoneLabel.heightAnchor.constraint(equalToConstant: 20),
         ])
     }

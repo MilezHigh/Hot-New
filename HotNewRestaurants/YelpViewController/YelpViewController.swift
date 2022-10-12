@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import CoreLocation
 
-class ViewController: UIViewController {
+class YelpViewController: UIViewController {
     lazy var tableView: UITableView = {
         let t = UITableView()
         t.delegate = self
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     private var currentLocation: CLLocation?
     private var locationManager: CLLocationManager?
     
-    var viewModel: MainViewModel?
+    var viewModel: YelpViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: UITableView Methods
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension YelpViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel?.businesses.count ?? 0
     }
@@ -110,7 +110,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 // MARK: CLLocation Methods
-extension ViewController: CLLocationManagerDelegate {
+extension YelpViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first, currentLocation == nil {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class YelpDetailsViewController: UIViewController {
     lazy var tableView: UITableView = {
@@ -19,10 +20,13 @@ class YelpDetailsViewController: UIViewController {
     
     var viewModel: YelpDetailsViewModel?
     
+    private var cancellable: AnyCancellable?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         registerCells()
+        registerSubscriptions()
     }
     
     private func setup() {
@@ -41,6 +45,17 @@ class YelpDetailsViewController: UIViewController {
     
     private func registerCells() {
         tableView.register(YelpTableViewCell.self, forCellReuseIdentifier: YelpTableViewCell.reuseIdentifier)
+        tableView.register(YelpReviewViewCell.self, forCellReuseIdentifier: YelpReviewViewCell.reuseIdentifier)
+    }
+    
+    private func registerSubscriptions() {
+        viewModel?.getReviews(storeId: viewModel?.yelpBusinessModel.id ?? "")
+        
+        cancellable = viewModel?.$reviews
+            .receive(on: RunLoop.main)
+            .sink { [weak self] values in
+                self?.tableView.reloadData()
+            }
     }
 }
 
@@ -51,7 +66,16 @@ extension YelpDetailsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        section == 0 ? 1 : 3
+        switch section {
+        case 0:
+            return 1
+            
+        case 1:
+            return viewModel?.reviews.count ?? 0
+            
+        default:
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,17 +83,17 @@ extension YelpDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: YelpTableViewCell.reuseIdentifier,
                                                            for: indexPath) as? YelpTableViewCell
-            else { return UITableViewCell() }
+            else { return UITableViewCell()}
+            
             cell.willDisplayDetails = true
             cell.model = viewModel?.yelpBusinessModel
             return cell
             
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: YelpTableViewCell.reuseIdentifier,
-                                                           for: indexPath) as? YelpTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: YelpReviewViewCell.reuseIdentifier,
+                                                           for: indexPath) as? YelpReviewViewCell
             else { return UITableViewCell() }
-            cell.willDisplayDetails = true
-            cell.model = viewModel?.yelpBusinessModel
+            cell.model = viewModel?.reviews[indexPath.row]
             return cell
             
         default:
