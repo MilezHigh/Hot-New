@@ -20,7 +20,6 @@ class YelpViewController: UIViewController {
         return t
     }()
     
-    private var subscriptions: Set<AnyCancellable> = []
     private var cancellable: AnyCancellable?
     private var currentLocation: CLLocation?
     private var locationManager: CLLocationManager?
@@ -66,12 +65,11 @@ class YelpViewController: UIViewController {
     }
     
     private func registerSubscribers() {
-        viewModel?.$businesses
+        cancellable = viewModel?.$businesses
             .receive(on: RunLoop.main)
             .sink { [weak self] values in
                 self?.tableView.reloadData()
             }
-            .store(in: &subscriptions)
     }
     
     private func requestLocation() {
