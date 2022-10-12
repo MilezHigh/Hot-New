@@ -1,0 +1,643 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A5293A228F657E000B7F091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293A128F657E000B7F091 /* AppDelegate.swift */; };
+		9A5293A428F657E000B7F091 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293A328F657E000B7F091 /* SceneDelegate.swift */; };
+		9A5293A628F657E000B7F091 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293A528F657E000B7F091 /* ViewController.swift */; };
+		9A5293AB28F657E300B7F091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A5293AA28F657E300B7F091 /* Assets.xcassets */; };
+		9A5293AE28F657E300B7F091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A5293AC28F657E300B7F091 /* LaunchScreen.storyboard */; };
+		9A5293B928F657E300B7F091 /* HotNewRestaurantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293B828F657E300B7F091 /* HotNewRestaurantsTests.swift */; };
+		9A5293C328F657E300B7F091 /* HotNewRestaurantsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293C228F657E300B7F091 /* HotNewRestaurantsUITests.swift */; };
+		9A5293C528F657E300B7F091 /* HotNewRestaurantsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293C428F657E300B7F091 /* HotNewRestaurantsUITestsLaunchTests.swift */; };
+		9A5293D228F6587B00B7F091 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293D128F6587B00B7F091 /* APIService.swift */; };
+		9A5293D428F6708400B7F091 /* YelpAPISearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293D328F6708400B7F091 /* YelpAPISearchResponse.swift */; };
+		9A5293D628F670CF00B7F091 /* YelpAPIBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293D528F670CF00B7F091 /* YelpAPIBusinessModel.swift */; };
+		9A5293D828F674CE00B7F091 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293D728F674CE00B7F091 /* MainViewModel.swift */; };
+		9A5293DA28F6961500B7F091 /* YelpAPIErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293D928F6961500B7F091 /* YelpAPIErrorModel.swift */; };
+		9A5293DC28F6BBC100B7F091 /* YelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293DB28F6BBC100B7F091 /* YelpTableViewCell.swift */; };
+		9A5293DE28F6D3F900B7F091 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293DD28F6D3F900B7F091 /* Extensions.swift */; };
+		9A5293E228F6E64C00B7F091 /* YelpDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5293E128F6E64C00B7F091 /* YelpDetailsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A5293B528F657E300B7F091 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A52939628F657E000B7F091 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A52939D28F657E000B7F091;
+			remoteInfo = HotNewRestaurants;
+		};
+		9A5293BF28F657E300B7F091 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A52939628F657E000B7F091 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A52939D28F657E000B7F091;
+			remoteInfo = HotNewRestaurants;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9A52939E28F657E000B7F091 /* HotNewRestaurants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotNewRestaurants.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A5293A128F657E000B7F091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9A5293A328F657E000B7F091 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9A5293A528F657E000B7F091 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A5293AA28F657E300B7F091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A5293AD28F657E300B7F091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A5293AF28F657E300B7F091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A5293B428F657E300B7F091 /* HotNewRestaurantsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotNewRestaurantsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A5293B828F657E300B7F091 /* HotNewRestaurantsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotNewRestaurantsTests.swift; sourceTree = "<group>"; };
+		9A5293BE28F657E300B7F091 /* HotNewRestaurantsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotNewRestaurantsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A5293C228F657E300B7F091 /* HotNewRestaurantsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotNewRestaurantsUITests.swift; sourceTree = "<group>"; };
+		9A5293C428F657E300B7F091 /* HotNewRestaurantsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotNewRestaurantsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9A5293D128F6587B00B7F091 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		9A5293D328F6708400B7F091 /* YelpAPISearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPISearchResponse.swift; sourceTree = "<group>"; };
+		9A5293D528F670CF00B7F091 /* YelpAPIBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPIBusinessModel.swift; sourceTree = "<group>"; };
+		9A5293D728F674CE00B7F091 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		9A5293D928F6961500B7F091 /* YelpAPIErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPIErrorModel.swift; sourceTree = "<group>"; };
+		9A5293DB28F6BBC100B7F091 /* YelpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpTableViewCell.swift; sourceTree = "<group>"; };
+		9A5293DD28F6D3F900B7F091 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9A5293E128F6E64C00B7F091 /* YelpDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpDetailsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A52939B28F657E000B7F091 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A5293B128F657E300B7F091 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A5293BB28F657E300B7F091 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A52939528F657E000B7F091 = {
+			isa = PBXGroup;
+			children = (
+				9A5293A028F657E000B7F091 /* HotNewRestaurants */,
+				9A5293B728F657E300B7F091 /* HotNewRestaurantsTests */,
+				9A5293C128F657E300B7F091 /* HotNewRestaurantsUITests */,
+				9A52939F28F657E000B7F091 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A52939F28F657E000B7F091 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A52939E28F657E000B7F091 /* HotNewRestaurants.app */,
+				9A5293B428F657E300B7F091 /* HotNewRestaurantsTests.xctest */,
+				9A5293BE28F657E300B7F091 /* HotNewRestaurantsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A5293A028F657E000B7F091 /* HotNewRestaurants */ = {
+			isa = PBXGroup;
+			children = (
+				9A5293A128F657E000B7F091 /* AppDelegate.swift */,
+				9A5293A328F657E000B7F091 /* SceneDelegate.swift */,
+				9A5293E128F6E64C00B7F091 /* YelpDetailsViewController.swift */,
+				9A5293DF28F6E5F800B7F091 /* MainViewController */,
+				9A5293D128F6587B00B7F091 /* APIService.swift */,
+				9A5293D328F6708400B7F091 /* YelpAPISearchResponse.swift */,
+				9A5293D528F670CF00B7F091 /* YelpAPIBusinessModel.swift */,
+				9A5293D928F6961500B7F091 /* YelpAPIErrorModel.swift */,
+				9A5293DD28F6D3F900B7F091 /* Extensions.swift */,
+				9A5293AA28F657E300B7F091 /* Assets.xcassets */,
+				9A5293AC28F657E300B7F091 /* LaunchScreen.storyboard */,
+				9A5293AF28F657E300B7F091 /* Info.plist */,
+			);
+			path = HotNewRestaurants;
+			sourceTree = "<group>";
+		};
+		9A5293B728F657E300B7F091 /* HotNewRestaurantsTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A5293B828F657E300B7F091 /* HotNewRestaurantsTests.swift */,
+			);
+			path = HotNewRestaurantsTests;
+			sourceTree = "<group>";
+		};
+		9A5293C128F657E300B7F091 /* HotNewRestaurantsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9A5293C228F657E300B7F091 /* HotNewRestaurantsUITests.swift */,
+				9A5293C428F657E300B7F091 /* HotNewRestaurantsUITestsLaunchTests.swift */,
+			);
+			path = HotNewRestaurantsUITests;
+			sourceTree = "<group>";
+		};
+		9A5293DF28F6E5F800B7F091 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9A5293A528F657E000B7F091 /* ViewController.swift */,
+				9A5293D728F674CE00B7F091 /* MainViewModel.swift */,
+				9A5293E028F6E60800B7F091 /* Cells */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		9A5293E028F6E60800B7F091 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9A5293DB28F6BBC100B7F091 /* YelpTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A52939D28F657E000B7F091 /* HotNewRestaurants */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A5293C828F657E300B7F091 /* Build configuration list for PBXNativeTarget "HotNewRestaurants" */;
+			buildPhases = (
+				9A52939A28F657E000B7F091 /* Sources */,
+				9A52939B28F657E000B7F091 /* Frameworks */,
+				9A52939C28F657E000B7F091 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HotNewRestaurants;
+			productName = HotNewRestaurants;
+			productReference = 9A52939E28F657E000B7F091 /* HotNewRestaurants.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A5293B328F657E300B7F091 /* HotNewRestaurantsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A5293CB28F657E300B7F091 /* Build configuration list for PBXNativeTarget "HotNewRestaurantsTests" */;
+			buildPhases = (
+				9A5293B028F657E300B7F091 /* Sources */,
+				9A5293B128F657E300B7F091 /* Frameworks */,
+				9A5293B228F657E300B7F091 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A5293B628F657E300B7F091 /* PBXTargetDependency */,
+			);
+			name = HotNewRestaurantsTests;
+			productName = HotNewRestaurantsTests;
+			productReference = 9A5293B428F657E300B7F091 /* HotNewRestaurantsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9A5293BD28F657E300B7F091 /* HotNewRestaurantsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A5293CE28F657E300B7F091 /* Build configuration list for PBXNativeTarget "HotNewRestaurantsUITests" */;
+			buildPhases = (
+				9A5293BA28F657E300B7F091 /* Sources */,
+				9A5293BB28F657E300B7F091 /* Frameworks */,
+				9A5293BC28F657E300B7F091 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A5293C028F657E300B7F091 /* PBXTargetDependency */,
+			);
+			name = HotNewRestaurantsUITests;
+			productName = HotNewRestaurantsUITests;
+			productReference = 9A5293BE28F657E300B7F091 /* HotNewRestaurantsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A52939628F657E000B7F091 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					9A52939D28F657E000B7F091 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					9A5293B328F657E300B7F091 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 9A52939D28F657E000B7F091;
+					};
+					9A5293BD28F657E300B7F091 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 9A52939D28F657E000B7F091;
+					};
+				};
+			};
+			buildConfigurationList = 9A52939928F657E000B7F091 /* Build configuration list for PBXProject "HotNewRestaurants" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A52939528F657E000B7F091;
+			productRefGroup = 9A52939F28F657E000B7F091 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A52939D28F657E000B7F091 /* HotNewRestaurants */,
+				9A5293B328F657E300B7F091 /* HotNewRestaurantsTests */,
+				9A5293BD28F657E300B7F091 /* HotNewRestaurantsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A52939C28F657E000B7F091 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A5293AE28F657E300B7F091 /* LaunchScreen.storyboard in Resources */,
+				9A5293AB28F657E300B7F091 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A5293B228F657E300B7F091 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A5293BC28F657E300B7F091 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A52939A28F657E000B7F091 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A5293D828F674CE00B7F091 /* MainViewModel.swift in Sources */,
+				9A5293DA28F6961500B7F091 /* YelpAPIErrorModel.swift in Sources */,
+				9A5293A628F657E000B7F091 /* ViewController.swift in Sources */,
+				9A5293DC28F6BBC100B7F091 /* YelpTableViewCell.swift in Sources */,
+				9A5293A228F657E000B7F091 /* AppDelegate.swift in Sources */,
+				9A5293E228F6E64C00B7F091 /* YelpDetailsViewController.swift in Sources */,
+				9A5293DE28F6D3F900B7F091 /* Extensions.swift in Sources */,
+				9A5293D628F670CF00B7F091 /* YelpAPIBusinessModel.swift in Sources */,
+				9A5293D228F6587B00B7F091 /* APIService.swift in Sources */,
+				9A5293A428F657E000B7F091 /* SceneDelegate.swift in Sources */,
+				9A5293D428F6708400B7F091 /* YelpAPISearchResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A5293B028F657E300B7F091 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A5293B928F657E300B7F091 /* HotNewRestaurantsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A5293BA28F657E300B7F091 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A5293C528F657E300B7F091 /* HotNewRestaurantsUITestsLaunchTests.swift in Sources */,
+				9A5293C328F657E300B7F091 /* HotNewRestaurantsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A5293B628F657E300B7F091 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A52939D28F657E000B7F091 /* HotNewRestaurants */;
+			targetProxy = 9A5293B528F657E300B7F091 /* PBXContainerItemProxy */;
+		};
+		9A5293C028F657E300B7F091 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A52939D28F657E000B7F091 /* HotNewRestaurants */;
+			targetProxy = 9A5293BF28F657E300B7F091 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9A5293AC28F657E300B7F091 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A5293AD28F657E300B7F091 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A5293C628F657E300B7F091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A5293C728F657E300B7F091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A5293C928F657E300B7F091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WMVNZYDS86;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HotNewRestaurants/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application needs your location to find businesses around you";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.milesFishman.HotNewRestaurants;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A5293CA28F657E300B7F091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WMVNZYDS86;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HotNewRestaurants/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application needs your location to find businesses around you";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.milesFishman.HotNewRestaurants;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9A5293CC28F657E300B7F091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WMVNZYDS86;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.milesFishman.HotNewRestaurantsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HotNewRestaurants.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HotNewRestaurants";
+			};
+			name = Debug;
+		};
+		9A5293CD28F657E300B7F091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WMVNZYDS86;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.milesFishman.HotNewRestaurantsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HotNewRestaurants.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HotNewRestaurants";
+			};
+			name = Release;
+		};
+		9A5293CF28F657E300B7F091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WMVNZYDS86;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.milesFishman.HotNewRestaurantsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HotNewRestaurants;
+			};
+			name = Debug;
+		};
+		9A5293D028F657E300B7F091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WMVNZYDS86;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.milesFishman.HotNewRestaurantsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HotNewRestaurants;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A52939928F657E000B7F091 /* Build configuration list for PBXProject "HotNewRestaurants" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A5293C628F657E300B7F091 /* Debug */,
+				9A5293C728F657E300B7F091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A5293C828F657E300B7F091 /* Build configuration list for PBXNativeTarget "HotNewRestaurants" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A5293C928F657E300B7F091 /* Debug */,
+				9A5293CA28F657E300B7F091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A5293CB28F657E300B7F091 /* Build configuration list for PBXNativeTarget "HotNewRestaurantsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A5293CC28F657E300B7F091 /* Debug */,
+				9A5293CD28F657E300B7F091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A5293CE28F657E300B7F091 /* Build configuration list for PBXNativeTarget "HotNewRestaurantsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A5293CF28F657E300B7F091 /* Debug */,
+				9A5293D028F657E300B7F091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A52939628F657E000B7F091 /* Project object */;
+}
