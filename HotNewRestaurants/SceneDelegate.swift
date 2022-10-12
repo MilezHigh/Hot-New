@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
         let controller = YelpViewController()
-        controller.viewModel = MainViewModel()
+        controller.viewModel = YelpViewModel()
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()

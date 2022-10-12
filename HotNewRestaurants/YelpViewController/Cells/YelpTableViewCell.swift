@@ -96,7 +96,9 @@ class YelpTableViewCell: UITableViewCell {
             nameLabel.text = model.name
             ratingLabel.text = "Rating: \(model.rating?.description ?? "")"
             priceLabel.text = model.price ?? "Price: N/A"
-            distanceLabel.text = model.distance?.description
+            
+            let miles = model.distance?.returnMiles() ?? 0
+            distanceLabel.text = "\(miles) mi. away"
             phoneLabel.text = model.phone
             addressLabel.text = model.location?.display_address?.reduce("", {
                 $0 + "\($0 == "" ? $0 : ", ")" + $1

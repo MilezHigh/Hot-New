@@ -15,3 +15,9 @@ extension UIImageView {
         }
     }
 }
+
+extension CGFloat {
+    func returnMiles() -> CGFloat {
+          return self / 1609.344
+     }
+}
