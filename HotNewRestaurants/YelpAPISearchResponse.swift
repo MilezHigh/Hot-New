@@ -9,5 +9,4 @@ import Foundation
 
 struct YelpAPISearchResponse: Decodable {
     var businesses: [YelpAPIBusinessModel] = []
-    //var error: YelpAPIErrorModel?
 }

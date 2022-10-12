@@ -17,7 +17,7 @@ class YelpTableViewCell: UITableViewCell {
         return view
     }()
     
-    lazy var rightSideView: UIStackView = {
+    lazy var contentStackView: UIStackView = {
         let view = UIStackView(frame: contentView.bounds)
         view.distribution = .equalSpacing
         view.axis = .vertical
@@ -57,6 +57,22 @@ class YelpTableViewCell: UITableViewCell {
         return view
     }()
     
+    lazy var addressLabel: UILabel = {
+        let view = UILabel(frame: .zero)
+        view.font = .systemFont(ofSize: 15)
+        view.textColor = . black
+        view.textAlignment = .right
+        return view
+    }()
+    
+    lazy var phoneLabel: UILabel = {
+        let view = UILabel(frame: .zero)
+        view.font = .systemFont(ofSize: 15)
+        view.textColor = . black
+        view.textAlignment = .right
+        return view
+    }()
+    
     lazy var businessImageView: UIImageView = {
         let view = UIImageView(frame: .zero)
         view.contentMode = .scaleAspectFill
@@ -67,6 +83,8 @@ class YelpTableViewCell: UITableViewCell {
     }()
         
     static var reuseIdentifier: String = "YelpTableViewCell"
+    
+    var willDisplayDetails: Bool = false
     
     var model: YelpAPIBusinessModel? {
         didSet {
@@ -89,12 +107,16 @@ class YelpTableViewCell: UITableViewCell {
         
         addSubview(containerView)
         
-        containerView.addArrangedSubview(rightSideView)
-        rightSideView.addArrangedSubview(businessImageView)
+        containerView.addArrangedSubview(contentStackView)
+        contentStackView.addArrangedSubview(businessImageView)
 
-        [nameLabel, ratingLabel, priceLabel, distanceLabel].forEach { label in
-            rightSideView.addArrangedSubview(label)
+        [nameLabel, ratingLabel, priceLabel, distanceLabel, addressLabel, phoneLabel].forEach { label in
+            contentStackView.addArrangedSubview(label)
         }
+        
+        addressLabel.isHidden = !willDisplayDetails
+        phoneLabel.isHidden = !willDisplayDetails
+        distanceLabel.isHidden = willDisplayDetails
         
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
@@ -106,7 +128,9 @@ class YelpTableViewCell: UITableViewCell {
             nameLabel.heightAnchor.constraint(equalToConstant: 30),
             ratingLabel.heightAnchor.constraint(equalToConstant: 20),
             priceLabel.heightAnchor.constraint(equalToConstant: 20),
-            distanceLabel.heightAnchor.constraint(equalToConstant: 20)
+            distanceLabel.heightAnchor.constraint(equalToConstant: 20),
+            addressLabel.heightAnchor.constraint(equalToConstant: 20),
+            phoneLabel.heightAnchor.constraint(equalToConstant: 20),
         ])
     }
 }

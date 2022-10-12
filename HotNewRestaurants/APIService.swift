@@ -89,7 +89,24 @@ extension APIService {
     func yelpAPISearch(attributes: String = "hot_and_new",
                        longitude: Double,
                        latitude: Double) -> AnyPublisher<[YelpAPIBusinessModel], Error> {
-        let urlString = "https://api.yelp.com/v3/businesses/search?attributes=\(attributes)&location=NYC"
+        let urlString = "https://api.yelp.com/v3/businesses/search?attributes=\(attributes)&latitude=\(Decimal(latitude))&longitude=\(Decimal(longitude))"
+        
+        guard let url = URL(string: urlString) else {
+            fatalError("URL assertion failure")
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        let headers = ["Authorization": "Bearer \(yelpAPIKey)"]
+        urlRequest.allHTTPHeaderFields = headers
+        
+        let publisher: AnyPublisher<YelpAPISearchResponse, Error> = requestObjectPublisher(urlRequest: urlRequest)
+        let businessPublisher = publisher.map({ $0.businesses }).eraseToAnyPublisher()
+        
+        return businessPublisher
+    }
+    
+    func yelpAPIReviews(id: String) -> AnyPublisher<[YelpAPIBusinessModel], Error> {
+        let urlString = "https://api.yelp.com/v3/businesses/{id}/reviews"
         
         guard let url = URL(string: urlString) else {
             fatalError("URL assertion failure")

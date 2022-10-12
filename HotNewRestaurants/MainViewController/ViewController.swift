@@ -50,7 +50,8 @@ class ViewController: UIViewController {
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         
-        if locationManager?.authorizationStatus != .authorizedWhenInUse {
+        if locationManager?.authorizationStatus != .authorizedWhenInUse
+            && locationManager?.authorizationStatus != .authorizedAlways {
             locationManager?.requestWhenInUseAuthorization()
         } else {
             requestLocation()
@@ -89,8 +90,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.model = viewModel?.businesses[indexPath.row]
         cell.selectionStyle = .none
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? YelpTableViewCell,
+              let model = cell.model
+        else { return }
+        
+        let detailsController = YelpDetailsViewController()
+        let detailsViewModel = YelpDetailsViewModel(yelpBusinessModel: model)
+        detailsController.viewModel = detailsViewModel
+        navigationController?.pushViewController(detailsController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -106,10 +117,9 @@ extension ViewController: CLLocationManagerDelegate {
             manager.stopUpdatingLocation()
             
             currentLocation = location
-            
-            let latitude = location.coordinate.latitude
-            let longitude = location.coordinate.longitude
-            viewModel?.searchLocalBusinesses(longitude: longitude, latitude: latitude)
+
+            viewModel?.searchLocalBusinesses(longitude: location.coordinate.longitude,
+                                             latitude: location.coordinate.latitude)
         }
     }
     
