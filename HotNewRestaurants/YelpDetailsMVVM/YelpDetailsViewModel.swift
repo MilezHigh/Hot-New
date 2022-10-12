@@ -18,6 +18,8 @@ class YelpDetailsViewModel {
     
     init(yelpBusinessModel: YelpAPIBusinessModel) {
         self.yelpBusinessModel = yelpBusinessModel
+        
+        getReviews(storeId: yelpBusinessModel.id ?? "")
     }
     
     private func fetchReviews(storeId: String) -> AnyPublisher<[YelpAPIReviewModel], Error> {

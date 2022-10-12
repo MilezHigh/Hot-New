@@ -14,6 +14,7 @@ class YelpDetailsViewController: UIViewController {
         t.delegate = self
         t.dataSource = self
         t.backgroundColor = .clear
+        t.estimatedRowHeight = 100
         t.translatesAutoresizingMaskIntoConstraints = false
         return t
     }()
@@ -53,8 +54,6 @@ class YelpDetailsViewController: UIViewController {
     }
     
     private func registerSubscriptions() {
-        viewModel?.getReviews(storeId: viewModel?.yelpBusinessModel.id ?? "")
-        
         cancellable = viewModel?.$reviews
             .receive(on: RunLoop.main)
             .sink { [weak self] values in
