@@ -27,6 +27,7 @@ class YelpViewModel {
     
     func searchLocalBusinesses(longitude: Double, latitude: Double) {
         searchLocalBusinesses(longitude: longitude, latitude: latitude)
+            .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .finished: break

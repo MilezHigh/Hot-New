@@ -25,6 +25,7 @@ class YelpDetailsViewModel {
     private func fetchReviews(storeId: String) -> AnyPublisher<[YelpAPIReviewModel], Error> {
         let result = APIService.shared
             .yelpAPIReviews(id: storeId)
+            .retry(1)
             .eraseToAnyPublisher()
 
         return result
@@ -32,6 +33,7 @@ class YelpDetailsViewModel {
     
     func getReviews(storeId: String) {
         fetchReviews(storeId: storeId)
+            .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .finished: break
@@ -39,6 +41,7 @@ class YelpDetailsViewModel {
                     print(error.localizedDescription)
                 }
             } receiveValue: { [weak self] models in
+                print(models.count)
                 self?.reviews = models
             }
             .store(in: &subscriptions)

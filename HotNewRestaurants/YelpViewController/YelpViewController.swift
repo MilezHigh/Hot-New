@@ -66,7 +66,7 @@ class YelpViewController: UIViewController {
     
     private func registerSubscribers() {
         cancellable = viewModel?.$businesses
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] values in
                 self?.tableView.reloadData()
             }
