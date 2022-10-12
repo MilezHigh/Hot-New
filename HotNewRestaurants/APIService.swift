@@ -8,25 +8,6 @@
 import Foundation
 import Combine
 
-enum APIError: Error {
-    case invalidResponse(description: String)
-    case invalidURL
-    
-    var localizedDescription: String {
-        switch self {
-        case .invalidResponse(let description):
-            return description
-            
-        case .invalidURL:
-            return "Invalid URL"
-        }
-    }
-}
-
-protocol YelpAPIService {
-    func search()
-}
-
 class APIService {
     static let shared: APIService = APIService()
         
@@ -58,7 +39,6 @@ extension APIService {
             .eraseToAnyPublisher()
     }
     
-    /// Image Data Handling
     func loadData(urlString: String, completion: @escaping (Data?) -> Void) {
         DispatchQueue.global().async { [weak self] in
             guard let url = URL(string: urlString) else { return }
