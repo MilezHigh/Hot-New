@@ -99,7 +99,7 @@ class YelpTableViewCell: UITableViewCell {
             
             let miles = model.distance?.returnMiles() ?? 0
             distanceLabel.text = "\(miles) mi. away"
-            phoneLabel.text = model.phone
+            phoneLabel.text = model.phone ?? "Phone: N/A"
             addressLabel.text = model.location?.display_address?.reduce("", {
                 $0 + "\($0 == "" ? $0 : ", ")" + $1
             })

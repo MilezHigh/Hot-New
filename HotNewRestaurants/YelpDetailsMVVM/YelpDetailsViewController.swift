@@ -29,6 +29,10 @@ class YelpDetailsViewController: UIViewController {
         registerSubscriptions()
     }
     
+    deinit {
+        print("\(Self.description()) Deallocated")
+    }
+    
     private func setup() {
         title = viewModel?.yelpBusinessModel.name
         

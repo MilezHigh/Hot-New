@@ -114,10 +114,10 @@ extension YelpViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first, currentLocation == nil {
+            currentLocation = location
+            
             manager.stopUpdatingLocation()
             
-            currentLocation = location
-
             viewModel?.searchLocalBusinesses(longitude: location.coordinate.longitude,
                                              latitude: location.coordinate.latitude)
         }
