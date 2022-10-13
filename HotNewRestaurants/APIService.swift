@@ -23,7 +23,10 @@ extension APIService {
         return URLSession.shared
             .dataTaskPublisher(for: request)
             .receive(on: DispatchQueue.global(qos: .background), options: .none)
-            .tryMap ({ $0.data })
+            .tryMap ({
+                $0.data
+                
+            })
             .eraseToAnyPublisher()
     }
     
