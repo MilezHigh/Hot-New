@@ -20,13 +20,6 @@ class YelpViewController: UIViewController {
         return t
     }()
     
-    lazy var activityIndicator: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        view.style = .large
-        view.tintColor = .gray
-        return view
-    }()
-    
     private var cancellable: AnyCancellable?
     private var currentLocation: CLLocation?
     private var locationManager: CLLocationManager?
