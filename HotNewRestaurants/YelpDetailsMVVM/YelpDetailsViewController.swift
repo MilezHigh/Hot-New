@@ -85,6 +85,7 @@ extension YelpDetailsViewController: UITableViewDelegate, UITableViewDataSource 
                                                            for: indexPath) as? YelpTableViewCell
             else { return UITableViewCell()}
             
+            cell.selectionStyle = .none
             cell.willDisplayDetails = true
             cell.model = viewModel?.yelpBusinessModel
             return cell
@@ -93,6 +94,8 @@ extension YelpDetailsViewController: UITableViewDelegate, UITableViewDataSource 
             guard let cell = tableView.dequeueReusableCell(withIdentifier: YelpReviewViewCell.reuseIdentifier,
                                                            for: indexPath) as? YelpReviewViewCell
             else { return UITableViewCell() }
+            
+            cell.selectionStyle = .none
             cell.model = viewModel?.reviews[indexPath.row]
             return cell
             
